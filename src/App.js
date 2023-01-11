@@ -63,8 +63,8 @@ var emojiDictionary = {
   "💢": " Anger Symbol",
   "💬": " Speech Balloon",
   "👁️‍🗨️": " Eye in Speech Bubble",
-  "": "Smiling Face with Tear",
-  "☺": "Smiling Face"
+  "☺": "Smiling Face",
+  "": ""
 };
 var emojiesCollection = Object.keys(emojiDictionary);
 
@@ -75,7 +75,7 @@ export default function App() {
 
     var meaning = emojiDictionary[inputEmoji];
     if (meaning === undefined) {
-      return "Oops! That is not updated on our database.";
+      meaning = "Oops! That is not updated on our database.🙁";
     }
 
     setMeaning(meaning);
@@ -88,7 +88,14 @@ export default function App() {
     <div className="App">
       <h1>inside outtt!</h1>
       <input onChange={emojiMeaningChangeHandler}></input>
-      <div style={{ padding: "1rem", fontSize: "1rem", fontWeight: "bold" }}>
+      <div
+        style={{
+          padding: "1rem",
+          fontSize: "1rem",
+          fontWeight: "bold",
+          color: "red"
+        }}
+      >
         {" "}
         {meaning}{" "}
       </div>
